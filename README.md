@@ -47,27 +47,51 @@ Hệ thống giám sát nhiệt độ, độ ẩm, ánh sáng và chất lượn
 
 ---
 
-###### 📚 Thư Viện Cần Thiết (Libraries)
+## 📲 Cấu Hình Blynk Virtual Pins
 
-Trước khi biên dịch code, vui lòng cài đặt các thư viện sau qua Library Manager trên Arduino IDE:
-
-* `Blynk` by Volodymyr Shymanskyy
-* `DHT sensor library` by Adafruit
-* `Adafruit GFX Library` by Adafruit
-* `Adafruit SH110X` by Adafruit
+| Virtual Pin | Thông số / Chức năng | Kiểu dữ liệu | Đơn vị / Trạng thái |
+| :---: | :--- | :---: | :---: |
+| `V0` | Nhiệt độ | Double | °C |
+| `V1` | Độ ẩm | Double | % |
+| `V2` | Giá trị ánh sáng | Integer | 0 - 4095 |
+| `V3` | Chất lượng không khí | Integer | 0 - 4095 |
+| `V4` | Cảnh báo Nhiệt độ Thấp | Integer | 0 / 1 |
+| `V5` | Cảnh báo Nhiệt độ Cao | Integer | 0 / 1 |
+| `V6` | Cảnh báo Độ ẩm Thấp | Integer | 0 / 1 |
+| `V7` | Cảnh báo Độ ẩm Cao | Integer | 0 / 1 |
+| `V8` | Cảnh báo Ánh sáng Thấp | Integer | 0 / 1 |
+| `V9` | Cảnh báo Ánh sáng Cao | Integer | 0 / 1 |
+| `V10` | Cảnh báo Không khí Kém | Integer | 0 / 1 |
 
 ---
 
-####### 🚀 Hướng Dẫn Cài Đặt & Nạp Code
+## 📚 Thư Viện Cần Thiết (Libraries)
+
+| Tên thư viện | Tác giả | Mục đích |
+| :--- | :--- | :--- |
+| `Blynk` | Volodymyr Shymanskyy | Kết nối Cloud và gửi dữ liệu tới App |
+| `DHT sensor library` | Adafruit | Đọc dữ liệu từ cảm biến DHT11 |
+| `Adafruit GFX Library` | Adafruit | Đồ họa cơ bản cho màn hình |
+| `Adafruit SH110X` | Adafruit | Điều khiển màn hình OLED SH1106 |
+
+---
+
+## 🚀 Hướng Dẫn Cài Đặt & Nạp Code
 
 1. Clone dự án về máy tính:
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-2. Mở file .ino bằng Arduino IDE.
-3. Cập nhật thông tin Blynk Template ID, Device Name và Auth Token ở đầu file:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   ```
+2. Mở file `.ino` bằng **Arduino IDE**.
+3. Cập nhật thông tin Blynk Credentials:
+   ```cpp
    #define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
    #define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
    #define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
-4. Điền tên WiFi và Mật khẩu của bạn:
+   ```
+4. Cấu hình thông tin Wi-Fi:
+   ```cpp
    char ssid[] = "YOUR_WIFI_NAME";
    char pass[] = "YOUR_WIFI_PASSWORD";
-5. Chọn đúng Board (ESP32 Dev Module) và Port tương ứng, sau đó tiến hành Compile và Upload.
+   ```
+5. Chọn Board **ESP32 Dev Module**, chọn Cổng COM tương ứng và ấn **Upload**.
