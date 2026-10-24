@@ -4,7 +4,7 @@ Hệ thống giám sát nhiệt độ, độ ẩm, ánh sáng và chất lượn
 
 ## 📌 Tính Năng Chính
 
-1. Đọc dữ liệu cảm biến thời gian thực:**
+1. Đọc dữ liệu cảm biến thời gian thực:
 - Nhiệt độ & Độ ẩm (DHT11)
 - Cường độ ánh sáng (Cảm biến Quang trở LDR)
 - Chất lượng không khí (MQ-135)
@@ -28,20 +28,22 @@ Hệ thống giám sát nhiệt độ, độ ẩm, ánh sáng và chất lượn
 
 #### 🔌 Sơ Đồ Cấu Hình Chân (Pinout Configuration)
 
-| Linh kiện / Chức năng    | Chân trên ESP32    | Ghi chú                       |
+## 🔌 Sơ Đồ Cấu Hình Chân (Pinout Configuration)
 
-| DHT11 Data               |  GPIO 23           | Cảm biến nhiệt độ/độ ẩm       |
-| MQ-135 Analog            |  GPIO 32           | Cảm biến chất lượng không khí |
-| LDR Analog (A0)          |  GPIO 34           | Đọc cường độ ánh sáng Analog  |
-| LDR Digital (D0)         |  GPIO 27           | Đọc tín hiệu số ánh sáng      |
-| OLED SDA                 |  GPIO 21           | Giao tiếp I2C                 |
-| OLED SCL                 |  GPIO 22           | Giao tiếp I2C                 |
-| Buzzer                   |  GPIO 25           | Còi cảnh báo                  |
-| LED WiFi                 |  GPIO 14           | Báo trạng thái WiFi           |
-| LED Air Bad              |  GPIO 13           | Báo không khí kém             |
-| LED Temp Low / High      |  GPIO 33 / GPIO 19 | Báo nhiệt độ thấp / cao       |
-| LED Hum Low / High       |  GPIO 18 / GPIO 4  | Báo độ ẩm thấp / cao          |
-| LED Light Low / High     |  GPIO 26 / GPIO 12 | Báo ánh sáng yếu / mạnh       |
+| Linh kiện / Chức năng | Chân trên ESP32 | Kiểu dữ liệu / Vai trò |
+| :--- | :---: | :--- |
+| **DHT11 Data** | `GPIO 23` | Digital Input |
+| **MQ-135 Analog** | `GPIO 32` | Analog Input (ADC) |
+| **LDR Analog (A0)** | `GPIO 34` | Analog Input (ADC) |
+| **LDR Digital (D0)** | `GPIO 27` | Digital Input |
+| **OLED SDA** | `GPIO 21` | I2C Data Line |
+| **OLED SCL** | `GPIO 22` | I2C Clock Line |
+| **Buzzer** | `GPIO 25` | Output |
+| **LED WiFi** | `GPIO 14` | Output (Trạng thái kết nối) |
+| **LED Air Bad** | `GPIO 13` | Output (Báo không khí kém) |
+| **LED Temp Low / High** | `GPIO 33` / `GPIO 19` | Output (Báo nhiệt độ) |
+| **LED Hum Low / High** | `GPIO 18` / `GPIO 4` | Output (Báo độ ẩm) |
+| **LED Light Low / High** | `GPIO 26` / `GPIO 12` | Output (Báo ánh sáng) |
 
 ---
 
